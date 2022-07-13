@@ -1,31 +1,43 @@
 #ifndef __MAIN_H__
 #define __MAIN_H__
-
 #include <stdarg.h>
-#include <stdlib.h>
 #include <stdio.h>
-#include <unistd.h>
 
 /**
- * struct conv_spec - struct containing identifiers and their
- * conversion specifiers
- *@id: id character
- * @func: function pointer to correct conversion function
+ * struct print - structure for printing various types
+ * @t: type to print
+ * @f: function to print
  */
-
-typedef struct conv_spec
+typedef struct print
 {
-	char id;
-	int (*func)(va_list);
-} spec;
+	char *t;
+	int (*f)(va_list);
+} print_t;
 
 int _printf(const char *format, ...);
-int func_print(char k, va_list valist):
-int print_d(va_list valist);
-int print_i(va_list valist);
-int print_s(va_list valist);
-void rev_buff(char *s);
 int _putchar(char c);
-int _itoa(int z);
+int print_c(va_list c);
+int print_s(va_list s);
+int print_i(va_list i);
+int print_d(va_list d);
+int print_f(va_list f);
+int print_e(va_list e);
+int print_g(va_list g);
+int print_l(va_list l);
+int print_0(va_list zero);
+int print_h(va_list h);
+int print_u(va_list u);
+int print_b(va_list b);
+int print_o(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_p(va_list p);
+int print_S(va_list S);
+int print_r(va_list r);
+int print_R(va_list R);
+int print_add(va_list add);
+int print_less(va_list less);
+int print_space(va_list space);
+int print_sharp(va_list sharp);
 
 #endif
